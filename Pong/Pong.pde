@@ -10,14 +10,12 @@ int leftscore = 0;
 int rightscore = 0;
 int count = 0;
 
-
-
 void setup() {
   size(600, 500);
   puck = new Puck();
   left = new Paddle(true);
   right = new Paddle(false);
-  mySerial = new Serial(this, "COM9", 9600);
+  mySerial = new Serial(this, "/dev/cu.usbmodem1411", 9600);
 }
 
 void draw() {
@@ -55,4 +53,15 @@ void get_serial() {
       }
     }
   }
+}
+
+void keyReleased() {
+  if (keyCode == LEFT){
+    leftscore = 0;
+    rightscore = 0;
+  }
+  if (keyCode == RIGHT) {
+    if (looping)  noLoop();
+    else          loop();
+    }
 }

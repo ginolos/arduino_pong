@@ -15,8 +15,8 @@ class Puck {
         float diff = y - (p.y - p.h/2);
         float rad = radians(45);
         float angle = map(diff, 0, p.h, -rad, rad);
-        xspeed = 5 * cos(angle);
-        yspeed = 5 * sin(angle);
+        xspeed = 10 * cos(angle);
+        yspeed = 10 * sin(angle);
         x = p.x + p.w/2 + r;
       }
     }
@@ -26,8 +26,8 @@ class Puck {
       if (x < p.x) {
         float diff = y - (p.y - p.h/2);
         float angle = map(diff, 0, p.h, radians(225), radians(135));
-        xspeed = 5 * cos(angle);
-        yspeed = 5 * sin(angle);
+        xspeed = 10 * cos(angle);
+        yspeed = 10 * sin(angle);
         x = p.x - p.w/2 - r;
       }
     }
